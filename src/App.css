@@ -1,9 +1,25 @@
 .header{
     height: 5rem;
+    font-size: 1.2rem;
+    background-color: #F2F3F4;
+    color: #707070;
 }
 .footer{
-    height: 7rem;
-    font-size: 2rem;
+    height: 10rem;
+    color: #707070;
+    font-weight: 400;
+    background-color: #D4D5D6;
+}
+input{
+    height:3rem;
+}
+.inputSearch{
+    width: 70%;
+    margin-right: 5%;
+}
+.inputSubmit{
+    background-color: #7B8395;
+    color: whitesmoke;
 }
 td, th{
     text-align: center;
@@ -11,7 +27,7 @@ td, th{
 th:first-child, td:first-child{
     text-align: left;
 }
-th{
+th, .sidebar p{
     cursor: pointer;
 }
 .error{
@@ -24,5 +40,14 @@ th{
     overflow-x: hidden;
 }
 .choose{
-    background-color: lavender;
+    background-color: #E4E5E6;
+}
+.sidebar{
+    width: 15rem;
+    height: 100%;
+    position: absolute;
+    background-color: #E4E5E6;
+    color: #707070;
+    padding-top: 19rem;
+    font-size: 1.1rem;
 }

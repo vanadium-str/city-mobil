@@ -22,24 +22,26 @@ function App() {
     const [miniVan, setMiniVan] = useState('');
     const [business, setBusiness] = useState('');
 
-  return (
-    <Context.Provider value={
-        {
-            head, setHead, keyword, setKeyword,
-            search, setSearch, chooseCar, setChooseCar,
-            chooseYear, setChooseYear, cars, setCars,
-            onSort, setOnSort,
-            mark, setMark, econom, setEconom,
-            comfort, setComfort, comfortPlus, setComfortPlus,
-            miniVan, setMiniVan, business, setBusiness
-        }
-    }>
-        <Header/>
-        <Main/>
-        <Sidebar/>
-        <Footer/>
-    </Context.Provider>
-  );
+    return (
+        <Context.Provider value={
+            {
+                head, setHead, keyword, setKeyword,
+                search, setSearch, chooseCar, setChooseCar,
+                chooseYear, setChooseYear, cars, setCars,
+                onSort, setOnSort,
+                mark, setMark, econom, setEconom,
+                comfort, setComfort, comfortPlus, setComfortPlus,
+                miniVan, setMiniVan, business, setBusiness
+            }
+        }>
+            <Header/>
+            <div className='position-relative'>
+                <Sidebar/>
+                <Main/>
+            </div>
+            <Footer/>
+        </Context.Provider>
+    );
 }
 
 export default App;

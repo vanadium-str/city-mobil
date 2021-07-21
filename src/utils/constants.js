@@ -18,3 +18,24 @@ export const Year = (array, key) => {
         return null;
     }
 }
+
+export const SearchYear = (item, keyword) => {
+    if(item.Эконом.year === keyword){
+        return true;
+    }
+    if(item.Комфорт.year === keyword){
+        return true;
+    }
+    if(item.КомфортПлюс.year === keyword){
+        return true;
+    }
+    if(item.Минивен.year === keyword){
+        return true;
+    }
+    if(item.Бизнес.year === keyword){
+        return true;
+    }
+    else{
+        return false;
+    }
+}

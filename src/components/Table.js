@@ -1,10 +1,11 @@
 import React, {useContext} from 'react';
 import {Year} from "../utils/constants";
 import {Context} from "../utils/context";
+import {FaCaretDown, FaCaretUp} from "react-icons/all";
 
 const Table = ({data}) => {
 
-    const {head, setChooseCar, setChooseYear, onSort, setOnSort} = useContext(Context);
+    const {head, setChooseCar, setChooseYear, onSort, setOnSort, search,setSearch} = useContext(Context);
 
     let sortData = [];
     const Sort = (event, sortKey) => {
@@ -19,7 +20,10 @@ const Table = ({data}) => {
                 <th datatype='string'
                     onClick={(event) => {
                         onSort.length ? setOnSort([]) : Sort(event, 'mark');
-                    }}>Марка и модель
+
+                    }}>
+                    Марка и модель
+                    {onSort.length ? <FaCaretUp className='ms-1'/> : <FaCaretDown className='ms-1'/>}
                 </th>
                 <th datatype='number' onClick={(event) => {
                     // onSort.length ? setOnSort([]) : Sort(event, 'tariffs.Эконом.year');
@@ -33,8 +37,8 @@ const Table = ({data}) => {
             <tbody>
             {onSort.length ?
                 onSort.map((item, key) => {
-
                     return (
+                        Year(onSort,key) ?
                         <tr>
                             <td onClick={() => {
                                 setChooseCar(`${onSort[key].mark} ${onSort[key].model}`);
@@ -58,12 +62,14 @@ const Table = ({data}) => {
                                 <td>{onSort[key].tariffs.Бизнес.year}</td>
                                 : <td> - </td>}
                         </tr>
+                            : null
                     )
                 })
                 :
                 data.map((item, key) => {
                     return (
-                        <tr>
+                        Year(data,key) ?
+                            <tr>
                             <td onClick={() => {
                                 setChooseCar(`${data[key].mark} ${data[key].model}`);
                                 setChooseYear(Year(data, key))
@@ -86,6 +92,7 @@ const Table = ({data}) => {
                                 <td>{data[key].tariffs.Бизнес.year}</td>
                                 : <td> - </td>}
                         </tr>
+                            : null
                     )
                 })}
             </tbody>

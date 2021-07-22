@@ -12,23 +12,19 @@ const Table = ({data}) => {
         sortData = data.slice().sort((a, b) => b[sortKey].localeCompare(a[sortKey]));
         setOnSort(sortData);
     }
-    return (
 
+    return (
         <table className='table mt-3'>
             <thead>
             <tr>
                 <th datatype='string'
                     onClick={(event) => {
                         onSort.length ? setOnSort([]) : Sort(event, 'mark');
-
                     }}>
                     Марка и модель
                     {onSort.length ? <FaCaretUp className='ms-1'/> : <FaCaretDown className='ms-1'/>}
                 </th>
-                <th datatype='number' onClick={(event) => {
-                    // onSort.length ? setOnSort([]) : Sort(event, `model`);
-                    // console.log(event);
-                }}>{head[4]}</th>
+                <th datatype='number'>{head[4]}</th>
                 <th datatype='number'>{head[1]}</th>
                 <th datatype='number'>{head[3]}</th>
                 <th datatype='number'>{head[5]}</th>
@@ -36,6 +32,7 @@ const Table = ({data}) => {
             </tr>
             </thead>
             <tbody>
+
             {onSort.length ?
                 onSort.map((item, key) => {
                     return (
@@ -66,8 +63,8 @@ const Table = ({data}) => {
                             : null
                     )
                 })
-                :
-                data.map((item, key) => {
+
+                : data.map((item, key) => {
                     return (
                         Year(data,key) ?
                             <tr>

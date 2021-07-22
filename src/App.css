@@ -41,6 +41,7 @@ th, .sidebar p{
 }
 .choose{
     background-color: #E4E5E6;
+    display: inline-block;
 }
 .sidebar{
     width: 15rem;

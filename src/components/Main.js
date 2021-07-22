@@ -12,7 +12,7 @@ const StyledMain = styled.div`
 const Main = () => {
     const {
         setHead, setCars, setOnSort,
-        setKeyword, setSearch, chooseCar, chooseYear
+        setKeyword, setSearch, chooseCar,setChooseCar, chooseYear
     } = useContext(Context);
 
     useEffect(() => {
@@ -47,6 +47,7 @@ const Main = () => {
                            onChange={(event) => {
                                setKeyword(event.target.value);
                                setSearch(false);
+                               setChooseCar('');
                            }}
                     />
                     <input type="submit"
@@ -58,8 +59,10 @@ const Main = () => {
                     <Search/>
                 </div>
                 {chooseCar ?
-                    <div className='mt-4 p-1 choose w-50'>
-                        <p className='ms-3 mb-0'>Выбран автомобиль {chooseCar} {chooseYear} года выпуска</p>
+                    <div className='mt-4 p-1 choose'>
+                        <p className='mx-3 mb-0'>
+                            Выбран автомобиль {chooseCar} {chooseYear} года выпуска
+                        </p>
                     </div>
                     : <></>}
             </div>

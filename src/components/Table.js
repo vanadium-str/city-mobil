@@ -5,7 +5,7 @@ import {FaCaretDown, FaCaretUp} from "react-icons/all";
 
 const Table = ({data}) => {
 
-    const {head, setChooseCar, setChooseYear, onSort, setOnSort, search,setSearch} = useContext(Context);
+    const {head, setChooseCar, setChooseYear, onSort, setOnSort} = useContext(Context);
 
     let sortData = [];
     const Sort = (event, sortKey) => {
@@ -26,7 +26,8 @@ const Table = ({data}) => {
                     {onSort.length ? <FaCaretUp className='ms-1'/> : <FaCaretDown className='ms-1'/>}
                 </th>
                 <th datatype='number' onClick={(event) => {
-                    // onSort.length ? setOnSort([]) : Sort(event, 'tariffs.Эконом.year');
+                    // onSort.length ? setOnSort([]) : Sort(event, `model`);
+                    // console.log(event);
                 }}>{head[4]}</th>
                 <th datatype='number'>{head[1]}</th>
                 <th datatype='number'>{head[3]}</th>

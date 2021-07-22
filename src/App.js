@@ -15,12 +15,6 @@ function App() {
     const [chooseCar, setChooseCar] = useState('');
     const [chooseYear, setChooseYear] = useState('');
     const [onSort, setOnSort] = useState([]);
-    const [mark, setMark] = useState('');
-    const [econom, setEconom] = useState('');
-    const [comfort, setComfort] = useState('');
-    const [comfortPlus, setComfortPlus] = useState('');
-    const [miniVan, setMiniVan] = useState('');
-    const [business, setBusiness] = useState('');
 
     return (
         <Context.Provider value={
@@ -28,10 +22,7 @@ function App() {
                 head, setHead, keyword, setKeyword,
                 search, setSearch, chooseCar, setChooseCar,
                 chooseYear, setChooseYear, cars, setCars,
-                onSort, setOnSort,
-                mark, setMark, econom, setEconom,
-                comfort, setComfort, comfortPlus, setComfortPlus,
-                miniVan, setMiniVan, business, setBusiness
+                onSort, setOnSort
             }
         }>
             <Header/>
